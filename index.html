@@ -4,25 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/output.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
     <title>Document</title>
   </head>
-  <body class="bg-[#F4F5F7]">
-    <!-- Login section -->
-    <section class="login-page flex flex-col items-center justify-center">
-      <!-- <img src="assets/bg.png" alt="">
- <img src="assets/Group.png" alt=""> -->
-      <div>
-        <div class="mobie w-xl bg-white shadow-2xl">
-          <div class="information mx-10">
-            <label for="numberinput">Mobile Number</label>
-           
-            <input type="text" placeholder="Enter your number" class="numberinput my-3 px-20 py-2 w-full bg-[#F4F5F7] rounded-2xl " />
-            <h3>4 digit Pin</h3>
-            <input type="text" placeholder="Enter your number" class="my-3 px-20 py-2 w-full bg-[#F4F5F7] rounded-2xl " />
-
-          </div>
-        </div>
+  <body class= " font-[Outfit] bg-[#F4F5F7] flex justify-center items-center min-h-screen ">
+   <!-- login form -->
+    <section class="sm:max-w-2xl lg:max-w-6xl mx-auto  ">
+      <div class="img relative flex flex-col items-center justify-center ">
+        <img src="assets/bg.png" alt="" class="absolute">
+        <img src="assets/Group.png" alt="" class="absolute -top-24 ">
       </div>
+      <div class="form bg-white px-40 py-20 sm:py-32 rounded-2xl"><form action="" class="flex flex-col   ">
+ <label for="" class="font-medium text-[16px] ">Mobile Number</label><br>
+ <input id="number" type="text" placeholder="Enter your number" class="number font-light text-[16px] rounded-2xl px-5 py-3 bg-[#F4F5F7]">
+ <label for="" class="font-medium text-[16px] mt-5">4 Digit Pin</label> <br>
+ <input type="text" id="pin" placeholder="Enter 4 Digit Pin" class="pin font-light text-[16px] rounded-2xl px-5 py-3 bg-[#F4F5F7]">
+<button id="btn" class="btn bg-[#0874F2]  rounded-2xl font-semibold text-[20px] px-5 py-2 mt-5 text-white">Login</button>
+      </form></div>
+      
+
+
+
     </section>
+ 
   </body>
+  <script src="Script.js" ></script>
 </html>
