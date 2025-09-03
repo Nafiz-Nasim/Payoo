@@ -70,7 +70,7 @@ document.getElementById("mainammount").innerHTML=tk;
 
 }
 // array that carry the all the div value that i have to change the for the hidden and toggle
-const divs=[addmoneydiv,cashoutdiv,Transferdiv,Bonusdiv,transdiv];
+const divs=[addmoneydiv,cashoutdiv,Transferdiv,Bonusdiv,transdiv,paybilldiv];
 function toggleDivVisibility(targetDiv){
 
 divs.forEach(div=> div.classList.add("hidden"));
