@@ -13,6 +13,7 @@ const mainAmountElement = document.getElementById("mainammount");
 const amountInput = document.getElementById("Amount");
 const bankSelection = document.getElementById("bankSelection");
 const TSSubmit=document.getElementById("TSSubmit");
+const paysubmit=document.getElementById("paysubmit");
 const BonusSubmit=document.getElementById("BonusSubmit");
 
 
@@ -55,13 +56,13 @@ document.getElementById("mainammount").innerHTML=tk;
 
 }
 
-function substractiontk(documentofaddmoney)
+function substractiontk(documentofsubmoney)
 {
 
 
 let tk = parseInt(document.getElementById("mainammount").innerHTML);
     
-let addtk=parseInt(document.getElementById(documentofaddmoney).value);
+let addtk=parseInt(document.getElementById(documentofsubmoney).value);
 tk=tk-addtk;
 document.getElementById("mainammount").innerHTML=tk;
 
@@ -215,5 +216,13 @@ document.getElementById("mainammount").innerHTML=tk;
     }
     
 
+
+})
+// pay now
+paysubmit.addEventListener('click',function(e){
+    e.preventDefault();
+    VerificationOfNumber("payaccountnumber");
+VerificationOfPin("paypin");
+substractiontk("payAmount");
 
 })
