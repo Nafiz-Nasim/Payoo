@@ -5,6 +5,7 @@ const cashout = document.getElementById("cashout");
 const cashoutdiv = document.getElementById("cashoutdiv");
 const Transfer = document.getElementById("Transfer");
 const bonus = document.getElementById("bonus");
+const transactions = document.getElementById("transactions");
 const paybill = document.getElementById("paybill");
 const Transferdiv = document.getElementById("Transferdiv");
 const pinInput = document.getElementById("pin");
@@ -15,6 +16,7 @@ const bankSelection = document.getElementById("bankSelection");
 const TSSubmit=document.getElementById("TSSubmit");
 const paysubmit=document.getElementById("paysubmit");
 const BonusSubmit=document.getElementById("BonusSubmit");
+let datas=[ ];
 
 
 // for the verification of the account number 
@@ -68,7 +70,7 @@ document.getElementById("mainammount").innerHTML=tk;
 
 }
 // array that carry the all the div value that i have to change the for the hidden and toggle
-const divs=[addmoneydiv,cashoutdiv,Transferdiv,Bonusdiv];
+const divs=[addmoneydiv,cashoutdiv,Transferdiv,Bonusdiv,transdiv];
 function toggleDivVisibility(targetDiv){
 
 divs.forEach(div=> div.classList.add("hidden"));
@@ -97,18 +99,22 @@ Transfer.addEventListener('click',function(e){
 // get Bonus option
 bonus.addEventListener('click',function(e){
     e.preventDefault();
-    toggleDivVisibility(Transferdiv)
+    toggleDivVisibility(Bonusdiv)
 })
 // pay bill option
 
 paybill.addEventListener('click',function(e){
     e.preventDefault();
-    toggleDivVisibility(Transferdiv)
+    toggleDivVisibility(paybilldiv)
 })
 // transactions
 transactions.addEventListener('click',function(e){
     e.preventDefault();
-    toggleDivVisibility(Transferdiv)
+    toggleDivVisibility(transdiv)
+
+
+    
+
 })
 // submit button for the add money
 submit.addEventListener('click', function (event) {
@@ -147,6 +153,14 @@ submit.addEventListener('click', function (event) {
     // const totalBalance = amount + mainAmount;
     // mainAmountElement.innerText = totalBalance;
     addtk("Amount");
+
+
+    const data={
+  name:"Add Money",
+  time:Date().toLocaleTimeString()
+
+}
+datas.push(data);
 });
 // for Cash out
 const CoSubmit = document.getElementById("CoSubmit");
@@ -190,6 +204,12 @@ CoSubmit.addEventListener('click', function (event) {
 
     const totalBalance = mainAmount - amount;
     mainAmountElement.innerText = totalBalance;
+        const data={
+  name:"Cashout Money",
+  time:Date().toLocaleTimeString()
+
+}
+datas.push(data);
 });
 
 // transfer section
@@ -198,7 +218,12 @@ e.preventDefault();
 VerificationOfNumber("TSNumber");
 VerificationOfPin("TSPin");
 substractiontk("TSAmount");
+    const data={
+  name:"Transfer Money",
+  time:Date().toLocaleTimeString()
 
+}
+datas.push(data);
 })
 
 
@@ -224,5 +249,21 @@ paysubmit.addEventListener('click',function(e){
     VerificationOfNumber("payaccountnumber");
 VerificationOfPin("paypin");
 substractiontk("payAmount");
+    const data={
+  name:"Pay Money",
+  time:Date().toLocaleTimeString()
+
+}
+datas.push(data);
 
 })
+
+// for the hoistory 
+
+
+
+
+
+
+
+
