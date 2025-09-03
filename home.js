@@ -4,6 +4,8 @@ const addmoneydiv = document.getElementById("addmoneydiv");
 const cashout = document.getElementById("cashout");
 const cashoutdiv = document.getElementById("cashoutdiv");
 const Transfer = document.getElementById("Transfer");
+const bonus = document.getElementById("bonus");
+const paybill = document.getElementById("paybill");
 const Transferdiv = document.getElementById("Transferdiv");
 const pinInput = document.getElementById("pin");
 const numberInput = document.getElementById("number");
@@ -11,6 +13,7 @@ const mainAmountElement = document.getElementById("mainammount");
 const amountInput = document.getElementById("Amount");
 const bankSelection = document.getElementById("bankSelection");
 const TSSubmit=document.getElementById("TSSubmit");
+const BonusSubmit=document.getElementById("BonusSubmit");
 
 
 // for the verification of the account number 
@@ -32,8 +35,9 @@ function VerificationOfPin(id)
     if(pin.length!==4)
     {
         alert("PIN must be 4 digits.")
-
+return false;
     }
+    return true;
 
 
 
@@ -63,7 +67,7 @@ document.getElementById("mainammount").innerHTML=tk;
 
 }
 // array that carry the all the div value that i have to change the for the hidden and toggle
-const divs=[addmoneydiv,cashoutdiv,Transferdiv];
+const divs=[addmoneydiv,cashoutdiv,Transferdiv,Bonusdiv];
 function toggleDivVisibility(targetDiv){
 
 divs.forEach(div=> div.classList.add("hidden"));
@@ -86,6 +90,22 @@ cashout.addEventListener('click', function (e) {
 })
 // transfer money option
 Transfer.addEventListener('click',function(e){
+    e.preventDefault();
+    toggleDivVisibility(Transferdiv)
+})
+// get Bonus option
+bonus.addEventListener('click',function(e){
+    e.preventDefault();
+    toggleDivVisibility(Transferdiv)
+})
+// pay bill option
+
+paybill.addEventListener('click',function(e){
+    e.preventDefault();
+    toggleDivVisibility(Transferdiv)
+})
+// transactions
+transactions.addEventListener('click',function(e){
     e.preventDefault();
     toggleDivVisibility(Transferdiv)
 })
@@ -171,11 +191,29 @@ CoSubmit.addEventListener('click', function (event) {
     mainAmountElement.innerText = totalBalance;
 });
 
-
+// transfer section
 TSSubmit.addEventListener('click',function(e){
 e.preventDefault();
 VerificationOfNumber("TSNumber");
 VerificationOfPin("TSPin");
 substractiontk("TSAmount");
+
+})
+
+
+// Bonus
+BonusSubmit.addEventListener('click',function(e)
+{
+    e.preventDefault();
+    if(VerificationOfPin("BonusPin"))
+    {
+        let tk = parseInt(document.getElementById("mainammount").innerHTML);
+    
+
+tk=parseInt(tk+500);
+document.getElementById("mainammount").innerHTML=tk;
+    }
+    
+
 
 })
