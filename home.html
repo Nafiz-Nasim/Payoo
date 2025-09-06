@@ -17,17 +17,21 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css"
+      rel="stylesheet"
+      type="text/css"
+    />
     <title>Document</title>
   </head>
-  <body class="font-[Outfit] ">
+  <body class="font-[Outfit]">
     <nav
       class="sm:max-w-2xl lg:max-w-6xl mx-auto flex flex-row items-center justify-between mt-5"
     >
       <div class="left flex flex-row items-center justify-centert ml-5 sm:ml-0">
         <img src="assets/Group.png" alt="" class="h-[50px] w-[48px]" />
         <div class="text">
-          <h3  class="font-extrabold">$ <span id="mainammount"> 4500</span></h3>
+          <h3 class="font-extrabold">$ <span id="mainammount"> 4500</span></h3>
           <p class="text-[#0808088f] text-[14px]">Available Balance</p>
         </div>
       </div>
@@ -55,38 +59,43 @@
       </div>
       <div class="options flex flex-col items-center justify-center">
         <div class="options grid grid-cols-3 mx-5 sm:mx-0 gap-3 mt-10">
-          <div id="addmoney"
+          <div
+            id="addmoney"
             class="add h-[70px] w-[100px] sm:h-[90px] sm:w-[123px] border-2 border-[#08080862] rounded-2xl flex flex-col items-center justify-center"
           >
             <img src="assets/wallet1.png" alt="" />
             <p class="text-[#080808b9]">Add Money</p>
           </div>
-          <div id="cashout"
+          <div
+            id="cashout"
             class="TRANSFER h-[70px] w-[100px] sm:h-[90px] sm:w-[123px] border-2 border-[#08080862] rounded-2xl flex-col flex items-center justify-center"
           >
             <img src="assets/send1.png" alt="" />
             <p class="text-[#080808b9]">Cashout</p>
           </div>
-          <div id="Transfer"
+          <div
+            id="Transfer"
             class="TRANSFER h-[70px] w-[100px] sm:h-[90px] sm:w-[123px] border-2 border-[#08080862] rounded-2xl flex-col flex items-center justify-center"
           >
             <img src="assets/money1.png" alt="" />
             <p class="text-[#080808b9] text-center">Transfer Money</p>
           </div>
-          <div id="bonus"
+          <div
+            id="bonus"
             class="cashout h-[70px] w-[100px] sm:h-[90px] sm:w-[123px] border-2 border-[#08080862] rounded-2xl flex-col flex items-center justify-center"
           >
             <img src="assets/bonus1.png" alt="" />
             <p class="text-[#080808b9]">Get Bonus</p>
           </div>
-          <div id="paybill"
+          <div
+            id="paybill"
             class="TRANSFER h-[70px] w-[100px] sm:h-[90px] sm:w-[123px] border-2 border-[#08080862] rounded-2xl flex-col flex items-center justify-center"
           >
             <img src="assets/purse1.png" alt="" />
             <p class="text-[#080808b9]">Pay Bill</p>
           </div>
           <div
-          id="transactions"
+            id="transactions"
             class="TRANSFER h-[70px] w-[100px] sm:h-[90px] sm:w-[123px] border-2 border-[#08080862] rounded-2xl flex-col flex items-center justify-center"
           >
             <img src="assets/wallet1.png" alt="" />
@@ -94,139 +103,238 @@
           </div>
         </div>
       </div>
-     
     </section>
-  
-  <!-- Add money -->
- <section id="addmoneydiv" class="hidden sm:max-w-2xl lg:max-w-6xl mx-auto  mt-10 bg-white rounded-2xl ">
 
+    <!-- Add money -->
+    <section
+      id="addmoneydiv"
+      class="hidden sm:max-w-2xl lg:max-w-6xl mx-auto mt-10 bg-white rounded-2xl"
+    >
+      <h2 class="ml-5 sm:ml-0">Add Money</h2>
+      <div class="form mx-5 sm:mx-0 flex flex-col items-center justify-center">
+        <form
+          action=""
+          class="w-full py-5 rounded-2xl flex flex-col items-center justify-center"
+        >
+          <label for="bankSelection">Select a Bank</label><br />
+          <select
+            id="bankSelection"
+            name="bank"
+            class="w-full gap-3 py-2 bg-[#F4F5F7] rounded-2xl"
+          >
+            <option value="bank1 " class="px-4">Bank 1</option>
+            <option value="bank2" class="px-4">Bank 2</option>
+            <option value="bank3" class="px-4">Bank 3</option>
+          </select>
+          <!-- number -->
+          <label for="" class="mt-3">Bank Account Number </label> <br />
+          <input
+            id="number"
+            type="text"
+            class="w-full py-2 bg-[#F4F5F7] rounded-2xl placeholder:px-4"
+            placeholder="Enter 11 digit account number"
+          />
+          <label for="" class="mt-3">Amount to Add </label> <br />
+          <input
+            type="text"
+            id="Amount"
+            class="w-full py-2 bg-[#F4F5F7] rounded-2xl placeholder:px-4"
+            placeholder="Add Amount to withdraw"
+          />
+          <label for="" class="mt-3">Pin Number </label> <br />
+          <input
+            id="pin"
+            type="text"
+            class="w-full py-2 bg-[#F4F5F7] rounded-2xl placeholder:px-4"
+            placeholder="Enter 4 digit pin number"
+          />
 
-    <h2 class="ml-5 sm:ml-0">Add Money</h2>
-<div class="form  mx-5 sm:mx-0 flex flex-col items-center justify-center ">
+          <button id="submit" class="mt-3 bg-blue-700 rounded-2xl py-3 w-full">
+            <h3 class="font-semibold text-[20px] text-white">Add Money</h3>
+          </button>
+        </form>
+      </div>
+    </section>
+    <!-- cashout money -->
+    <section
+      id="cashoutdiv"
+      class="hidden sm:max-w-2xl lg:max-w-6xl mx-auto mt-10 bg-white rounded-2xl"
+    >
+      <h2 class="ml-5 sm:ml-0">Cash Out</h2>
+      <div class="form mx-5 sm:mx-0 flex flex-col items-center justify-center">
+        <form
+          action=""
+          class="w-full py-5 rounded-2xl flex flex-col items-center justify-center"
+        >
+          <!-- number -->
+          <label for="" class="mt-3">Agent Number</label> <br />
+          <input
+            id="CoNumber"
+            type="text"
+            class="w-full py-2 bg-[#F4F5F7] rounded-2xl placeholder:px-4"
+            placeholder="Enter 11 digit account number"
+          />
+          <label for="" class="mt-3">Amount </label> <br />
+          <input
+            type="text"
+            id="CoAmount"
+            class="w-full py-2 bg-[#F4F5F7] rounded-2xl placeholder:px-4"
+            placeholder="Enter amount to withdraw"
+          />
+          <label for="" class="mt-3">Pin Number </label> <br />
+          <input
+            id="COPin"
+            type="text"
+            class="w-full py-2 bg-[#F4F5F7] rounded-2xl placeholder:px-4"
+            placeholder="Enter 4 digit pin number"
+          />
 
-    <form action="" class=" w-full  py-5 rounded-2xl flex flex-col items-center justify-center">
-<label for="bankSelection">Select a Bank</label><br>
-<select id="bankSelection" name="bank" class="w-full gap-3 py-2 bg-[#F4F5F7] rounded-2xl ">
-  <option value="bank1 " class="px-4">Bank 1</option>
-  <option value="bank2" class="px-4">Bank 2</option>
-  <option value="bank3" class="px-4">Bank 3</option>
-</select>
-<!-- number -->
- <label for="" class="mt-3">Bank Account Number </label> <br>
- <input id="number" type="text" class="w-full  py-2 bg-[#F4F5F7] rounded-2xl placeholder:px-4" placeholder="Enter 11 digit account number" >
- <label for="" class="mt-3">Amount to Add </label> <br>
- <input type="text" id="Amount" class="w-full  py-2 bg-[#F4F5F7] rounded-2xl placeholder:px-4" placeholder="Add Amount to withdraw" >
- <label for="" class="mt-3">Pin Number </label> <br>
- <input id="pin" type="text" class="w-full  py-2 bg-[#F4F5F7] rounded-2xl placeholder:px-4" placeholder="Enter 4 digit pin number" >
+          <button
+            id="CoSubmit"
+            class="mt-3 bg-blue-700 rounded-2xl py-3 w-full"
+          >
+            <h3 class="font-semibold text-[20px] text-white">Withdraw Money</h3>
+          </button>
+        </form>
+      </div>
+    </section>
+    <!-- Transfer Money -->
+    <section
+      id="Transferdiv"
+      class="hidden sm:max-w-2xl lg:max-w-6xl mx-auto mt-10 bg-white rounded-2xl"
+    >
+      <h2 class="ml-5 sm:ml-0">Transfer Money</h2>
+      <div class="form mx-5 sm:mx-0 flex flex-col items-center justify-center">
+        <form
+          action=""
+          class="w-full py-5 rounded-2xl flex flex-col items-center justify-center"
+        >
+          <!-- number -->
+          <label for="" class="mt-3">User Account Number</label> <br />
+          <input
+            id="TSNumber"
+            type="text"
+            class="w-full py-2 bg-[#F4F5F7] rounded-2xl placeholder:px-4"
+            placeholder="Enter 11 digit account number"
+          />
+          <label for="" class="mt-3">Amount </label> <br />
+          <input
+            type="text"
+            id="TSAmount"
+            class="w-full py-2 bg-[#F4F5F7] rounded-2xl placeholder:px-4"
+            placeholder="Enter amount to withdraw"
+          />
+          <label for="" class="mt-3">Pin Number </label> <br />
+          <input
+            id="TSPin"
+            type="text"
+            class="w-full py-2 bg-[#F4F5F7] rounded-2xl placeholder:px-4"
+            placeholder="Enter 4 digit pin number"
+          />
 
- <button id="submit" class="mt-3 bg-blue-700 rounded-2xl py-3 w-full " ><h3 class=" font-semibold text-[20px] text-white">Add Money</h3></button>
-    </form>
-</div>
- </section>
-  <!-- cashout money -->
-  <section id="cashoutdiv" class="hidden  sm:max-w-2xl lg:max-w-6xl mx-auto  mt-10 bg-white rounded-2xl ">
+          <button
+            id="TSSubmit"
+            class="mt-3 bg-blue-700 rounded-2xl py-3 w-full"
+          >
+            <h3 class="font-semibold text-[20px] text-white">Send Now</h3>
+          </button>
+        </form>
+      </div>
+    </section>
+    <!-- get bonus -->
+    <section
+      id="Bonusdiv"
+      class="hidden sm:max-w-2xl lg:max-w-6xl mx-auto mt-10 bg-white rounded-2xl"
+    >
+      <h2 class="ml-5 sm:ml-0">Get Bonus</h2>
+      <div class="form mx-5 sm:mx-0 flex flex-col items-center justify-center">
+        <form
+          action=""
+          class="w-full py-5 rounded-2xl flex flex-col items-center justify-center"
+        >
+          <!-- number -->
 
+          <label for="" class="mt-3">Enter Bonus Coupon </label> <br />
+          <input
+            id="BonusPin"
+            type="text"
+            class="w-full py-2 bg-[#F4F5F7] rounded-2xl placeholder:px-4"
+            placeholder="Enter 4 digit pin number"
+          />
 
-    <h2 class="ml-5 sm:ml-0">Cash Out</h2>
-<div class="form  mx-5 sm:mx-0 flex flex-col items-center justify-center ">
+          <button
+            id="BonusSubmit"
+            class="mt-3 bg-blue-700 rounded-2xl py-3 w-full"
+          >
+            <h3 class="font-semibold text-[20px] text-white">Get Bonus</h3>
+          </button>
+        </form>
+      </div>
+    </section>
 
-    <form action="" class=" w-full  py-5 rounded-2xl flex flex-col items-center justify-center">
+    <!-- pay bill -->
 
-<!-- number -->
- <label for="" class="mt-3">Agent Number</label> <br>
- <input id="CoNumber" type="text" class="w-full  py-2 bg-[#F4F5F7] rounded-2xl placeholder:px-4" placeholder="Enter 11 digit account number" >
- <label for="" class="mt-3">Amount  </label> <br>
- <input type="text" id="CoAmount" class="w-full  py-2 bg-[#F4F5F7] rounded-2xl placeholder:px-4" placeholder="Enter amount to withdraw" >
- <label for="" class="mt-3">Pin Number </label> <br>
- <input id="COPin" type="text" class="w-full  py-2 bg-[#F4F5F7] rounded-2xl placeholder:px-4" placeholder="Enter 4 digit pin number" >
+    <section
+      id="paybilldiv"
+      class="hidden sm:max-w-2xl lg:max-w-6xl mx-auto mt-10 bg-white rounded-2xl"
+    >
+      <h2 class="ml-5 sm:ml-0">Pay Bill</h2>
+      <div class="form mx-5 sm:mx-0 flex flex-col items-center justify-center">
+        <form
+          action=""
+          class="w-full py-5 rounded-2xl flex flex-col items-center justify-center"
+        >
+          <label for="bankSelection">Select a Bank</label><br />
+          <select
+            id="bankSelection"
+            name="bank"
+            class="w-full gap-3 py-2 bg-[#F4F5F7] rounded-2xl"
+          >
+            <option value="bank1 " class="px-4">Bank 1</option>
+            <option value="bank2" class="px-4">Bank 2</option>
+            <option value="bank3" class="px-4">Bank 3</option>
+          </select>
+          <!-- number -->
+          <label for="" class="mt-3">Bank Account Number </label> <br />
+          <input
+            id="payaccountnumber"
+            type="text"
+            class="w-full py-2 bg-[#F4F5F7] rounded-2xl placeholder:px-4"
+            placeholder="Enter 11 digit account number"
+          />
+          <label for="" class="mt-3">Amount to Pay </label> <br />
+          <input
+            type="text"
+            id="payAmount"
+            class="w-full py-2 bg-[#F4F5F7] rounded-2xl placeholder:px-4"
+            placeholder="Add Amount to withdraw"
+          />
+          <label for="" class="mt-3">Pin Number </label> <br />
+          <input
+            id="paypin"
+            type="text"
+            class="w-full py-2 bg-[#F4F5F7] rounded-2xl placeholder:px-4"
+            placeholder="Enter 4 digit pin number"
+          />
 
- <button id="CoSubmit" class="mt-3 bg-blue-700 rounded-2xl py-3 w-full " ><h3 class=" font-semibold text-[20px] text-white">Withdraw Money</h3></button>
-    </form>
-</div>
- </section>
-<!-- Transfer Money -->
-   <section id="Transferdiv" class=" hidden  sm:max-w-2xl lg:max-w-6xl mx-auto  mt-10 bg-white rounded-2xl ">
+          <button
+            id="paysubmit"
+            class="mt-3 bg-blue-700 rounded-2xl py-3 w-full"
+          >
+            <h3 class="font-semibold text-[20px] text-white">Pay Now</h3>
+          </button>
+        </form>
+      </div>
+    </section>
 
+    <!-- Transactions -->
+    <section id="transdiv" class=" hidden sm:max-w-2xl lg:max-w-6xl mx-auto
+    mt-10 bg-white rounded-2xl >
 
-    <h2 class="ml-5 sm:ml-0">Transfer Money</h2>
-<div class="form  mx-5 sm:mx-0 flex flex-col items-center justify-center ">
+    <h2 class="sm:ml-0">Transaction History</h2>
+   
+  </section>
 
-    <form action="" class=" w-full  py-5 rounded-2xl flex flex-col items-center justify-center">
-
-<!-- number -->
- <label for="" class="mt-3">User Account Number</label> <br>
- <input id="TSNumber" type="text" class="w-full  py-2 bg-[#F4F5F7] rounded-2xl placeholder:px-4" placeholder="Enter 11 digit account number" >
- <label for="" class="mt-3">Amount  </label> <br>
- <input type="text" id="TSAmount" class="w-full  py-2 bg-[#F4F5F7] rounded-2xl placeholder:px-4" placeholder="Enter amount to withdraw" >
- <label for="" class="mt-3">Pin Number </label> <br>
- <input id="TSPin" type="text" class="w-full  py-2 bg-[#F4F5F7] rounded-2xl placeholder:px-4" placeholder="Enter 4 digit pin number" >
-
- <button id="TSSubmit" class="mt-3 bg-blue-700 rounded-2xl py-3 w-full " ><h3 class=" font-semibold text-[20px] text-white">Send Now</h3></button>
-    </form>
-</div>
- </section>
- <!-- get bonus -->
-  <section id="Bonusdiv" class=" hidden sm:max-w-2xl lg:max-w-6xl mx-auto  mt-10 bg-white rounded-2xl ">
-
-
-    <h2 class="ml-5 sm:ml-0">Get Bonus</h2>
-<div class="form  mx-5 sm:mx-0 flex flex-col items-center justify-center ">
-
-    <form action="" class=" w-full  py-5 rounded-2xl flex flex-col items-center justify-center">
-
-<!-- number -->
-
- <label for="" class="mt-3">Enter Bonus Coupon </label> <br>
- <input id="BonusPin" type="text" class="w-full  py-2 bg-[#F4F5F7] rounded-2xl placeholder:px-4" placeholder="Enter 4 digit pin number" >
-
- <button id="BonusSubmit" class="mt-3 bg-blue-700 rounded-2xl py-3 w-full " ><h3 class=" font-semibold text-[20px] text-white">Get Bonus</h3></button>
-    </form>
-</div>
- </section>
- 
-<!-- pay bill -->
-
-
-  <section id="paybilldiv" class=" hidden sm:max-w-2xl lg:max-w-6xl mx-auto  mt-10 bg-white rounded-2xl ">
-
-
-    <h2 class="ml-5 sm:ml-0">Pay Bill</h2>
-<div class="form  mx-5 sm:mx-0 flex flex-col items-center justify-center ">
-
-    <form action="" class=" w-full  py-5 rounded-2xl flex flex-col items-center justify-center">
-<label for="bankSelection">Select a Bank</label><br>
-<select id="bankSelection" name="bank" class="w-full gap-3 py-2 bg-[#F4F5F7] rounded-2xl ">
-  <option value="bank1 " class="px-4">Bank 1</option>
-  <option value="bank2" class="px-4">Bank 2</option>
-  <option value="bank3" class="px-4">Bank 3</option>
-</select>
-<!-- number -->
- <label for="" class="mt-3">Bank Account Number </label> <br>
- <input id="payaccountnumber" type="text" class="w-full  py-2 bg-[#F4F5F7] rounded-2xl placeholder:px-4" placeholder="Enter 11 digit account number" >
- <label for="" class="mt-3">Amount to Pay </label> <br>
- <input type="text" id="payAmount" class="w-full  py-2 bg-[#F4F5F7] rounded-2xl placeholder:px-4" placeholder="Add Amount to withdraw" >
- <label for="" class="mt-3">Pin Number </label> <br>
- <input id="paypin" type="text" class="w-full  py-2 bg-[#F4F5F7] rounded-2xl placeholder:px-4" placeholder="Enter 4 digit pin number" >
-
- <button id="paysubmit" class="mt-3 bg-blue-700 rounded-2xl py-3 w-full " ><h3 class=" font-semibold text-[20px] text-white">Pay Now</h3></button>
-    </form>
-</div>
- </section>
- 
- <!-- Transactions -->
-    <section id="transdiv" class=" hidden sm:max-w-2xl lg:max-w-6xl mx-auto  mt-10 bg-white rounded-2xl >
-
-
-    <h2 class=" sm:ml-0">Transaction History</h2>
-<div id="historydiv" class="form  mx-5 sm:mx-0 sm:px-5 flex flex-row gap-5 mt-5 items-center bg-[#6598ff]  py-5 rounded-2xl px-2">
-  
- <div class="left bg-[#0808082d] p-3 rounded-3xl"><img src="assets/wallet1.png"" alt="" "></div>
- <div class="right"><h3 class="historyhead"></h3>
-<p class="historytime"></p></div>
-  
-  
-</div>
- </section>
     <script src="home.js"></script>
   </body>
 </html>
